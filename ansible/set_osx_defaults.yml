@@ -1,0 +1,4 @@
+---
+
+- name: Run shell script to set defaults
+  script: osx_defaults.sh

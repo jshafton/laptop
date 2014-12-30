@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+- tasks:
+  - include: homebrew_basics.yml
+  - include: homebrew_services.yml
+  - include: ruby.yml
+  - include: homebrew_other_development_languages.yml
+  - include: homebrew_cask_apps.yml
+  - include: configure_dock.yml
+  - include: dotfiles.yml
+  - include: homebrew_completions.yml
+  - include: homebrew_cleanup.yml
+
+  # TODO:
+  # --------------------------
+  # Install python / pip stuff
+  # Configure OSX defaults
+
+
+  # Apps in Mac App Store:
+  # ----------------------
+  # * DragonDrop
+  # * SSH Tunnel Manager
+  # * Monosnap
+  # * Kindle

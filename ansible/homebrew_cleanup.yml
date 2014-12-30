@@ -1,0 +1,7 @@
+---
+
+- name: Homebrew cleanup
+  shell: brew cleanup
+
+- name: Homebrew cask cleanup
+  shell: brew cask cleanup

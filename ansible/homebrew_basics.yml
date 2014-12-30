@@ -1,0 +1,59 @@
+---
+- name: Update Homebrew
+  homebrew: update_homebrew=yes
+
+- name: Install Homebrew taps
+  homebrew_tap: name={{ item }} state=present
+  with_items:
+    - homebrew/dupes
+    - homebrew/versions
+
+- name: Update Homebrew
+  homebrew: update_homebrew=yes upgrade_all=yes
+
+- name: Install libraries with Homebrew
+  homebrew: name={{ item }} state=latest
+  with_items:
+    - ack
+    - the_silver_searcher
+    - grep
+    - autojump
+    - curl
+    - wget
+    - bash
+    - coreutils
+    - ctags
+    - dockutil
+    - elinks
+    - git
+    - gnu-getopt
+    - htop-osx
+    - go
+    - hping
+    - httperf
+    - httpry
+    - hub
+    - iftop
+    - json-c
+    - libpng
+    - mackup
+    - macvim
+    - mercurial
+    - mtr
+    - mosh
+    - pcre
+    - phantomjs
+    - pigz
+    - psgrep
+    - readline
+    - reattach-to-user-namespace
+    - rename
+    - qt
+    - s3cmd
+    - tig
+    - tmux
+    - tree
+    - vimpager
+    - watch
+    - weechat
+    - wrk

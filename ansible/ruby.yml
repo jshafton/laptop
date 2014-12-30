@@ -1,0 +1,8 @@
+---
+
+- name: Install Ruby and related with Homebrew
+  homebrew: name={{ item }} state=latest
+  with_items:
+    - rbenv
+    - ruby-build
+    - rbenv-vars

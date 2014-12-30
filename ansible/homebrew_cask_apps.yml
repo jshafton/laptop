@@ -1,0 +1,57 @@
+---
+
+- name: Install Homebrew Cask brew
+  homebrew: name=caskroom/cask/brew-cask state=latest
+
+- name: Install Cask apps
+  homebrew_cask: name={{ item }} state=latest
+  with_items:
+
+    # main dev apps
+    - adium
+    - sourcetree
+    - tunnelblick
+    - wkhtmltopdf
+    - slack
+    - cord
+    - google-chrome
+    - iterm2
+    - sublime-text3
+    - virtualbox
+    - vagrant
+    - vagrant-manager
+    - virtualbox
+    - the-unarchiver
+
+    # quicklook plugins
+    - qlcolorcode
+    - qlmarkdown
+    - quicklook-json
+    - qlstephen
+
+    # personal apps
+    - dropbox
+    - caffeine
+    - utorrent
+    - vlc
+    - flux
+    - spotify
+    - android-file-transfer
+    - handbrake
+    - send-to-kindle
+    - nvalt
+
+    # paid apps
+    - hyperdock
+    - bartender
+    - daisydisk
+    - istat-menus
+    - adobe-photoshop-lightroom
+
+- name: Install Alfred app
+  homebrew_cask: name=alfred state=latest
+  register: alfred_install
+
+- name: Link Homebrew folders into Alfred
+  command: brew cask alfred link
+  when: alfred_install|changed

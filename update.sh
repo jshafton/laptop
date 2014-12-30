@@ -27,4 +27,4 @@ fi
 
 echo "Running Ansible playbook..."
 cd ansible
-ansible-playbook -i inventory local_install.yml
+ansible-playbook -i inventory local_install.yml --ask-sudo-pass

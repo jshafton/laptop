@@ -1,4 +1,9 @@
 ---
 
-- name: Run shell script to set defaults
-  script: osx_defaults.sh
+- name: Run shell script to set user defaults
+  script: osx_defaults_user.sh
+  sudo: no
+
+- name: Run shell script to set defaults with sudo
+  script: osx_defaults_sudo.sh
+  sudo: yes

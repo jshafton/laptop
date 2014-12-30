@@ -6,7 +6,7 @@
   homebrew: update_homebrew=yes
 
 - name: Install fonts with Homebrew Cask
-  homebrew: name=font-{{ item }} state=latest
+  homebrew: name=font-{{ item }} state=present
   with_items:
     - source-code-pro
     - sauce-code-powerline

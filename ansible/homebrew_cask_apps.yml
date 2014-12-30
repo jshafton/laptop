@@ -4,7 +4,7 @@
   homebrew: name=caskroom/cask/brew-cask state=latest
 
 - name: Install Cask apps
-  homebrew_cask: name={{ item }} state=latest
+  homebrew_cask: name={{ item }} state=present
   with_items:
 
     # main dev apps
@@ -17,7 +17,7 @@
     - google-chrome
     - iterm2
     - macvim
-    - sublime-text3
+    - sublime-text
     - virtualbox
     - vagrant
     - vagrant-manager
@@ -29,10 +29,10 @@
     - qlmarkdown
     - quicklook-json
     - qlstephen
+    - qlvideo
 
     # personal apps
     - dropbox
-    - caffeine
     - utorrent
     - vlc
     - flux
@@ -41,6 +41,9 @@
     - handbrake
     - send-to-kindle
     - nvalt
+
+    # Site is currently down
+    # - caffeine
 
     # paid apps
     - hyperdock

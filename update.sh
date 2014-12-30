@@ -25,6 +25,13 @@ else
   brew install git
 fi
 
+echo "Installing Ansible..."
+if ( which ansible  &> /dev/null ); then
+  echo "Ansible already installed."
+else
+  brew install ansible
+fi
+
 echo "Running Ansible playbook..."
 cd ansible
-ansible-playbook -i inventory local_install.yml --ask-sudo-pass
+ansible-playbook -i inventory -c local local_install.yml --ask-sudo-pass

@@ -53,7 +53,7 @@
     - adobe-photoshop-lightroom
 
 - name: Install Alfred app
-  homebrew_cask: name=alfred state=latest
+  homebrew_cask: name=alfred state=present
   register: alfred_install
 
 - name: Link Homebrew folders into Alfred

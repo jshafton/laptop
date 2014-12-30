@@ -1,16 +1,17 @@
 ---
 - hosts: localhost
   tasks:
-  - include: homebrew_basics.yml
-  - include: homebrew_services.yml
-  - include: ruby.yml
-  - include: homebrew_other_development_languages.yml
-  - include: homebrew_cask_apps.yml
-  - include: set_osx_defaults.yml
-  - include: configure_dock.yml
-  - include: dotfiles.yml
-  - include: homebrew_completions.yml
-  - include: homebrew_cleanup.yml
+  - include: homebrew_basics.yml tags=brew
+  - include: homebrew_services.yml tags=brew
+  - include: ruby.yml tags=devel
+  - include: homebrew_other_development_languages.yml tags=brew,devel
+  - include: homebrew_cask_apps.yml tags=brew,cask
+  - include: homebrew_cask_fonts.yml tags=brew,fonts
+  - include: set_osx_defaults.yml tags=defaults
+  - include: configure_dock.yml tags=dock
+  - include: dotfiles.yml tags=dotfiles
+  - include: homebrew_completions.yml tags=brew,completions
+  - include: homebrew_cleanup.yml tags=brew
 
   # TODO:
   # --------------------------

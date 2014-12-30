@@ -41,6 +41,8 @@
     - handbrake
     - send-to-kindle
     - nvalt
+    - karabiner
+    - bettertouchtool
 
     # Site is currently down
     # - caffeine
@@ -49,7 +51,7 @@
     - hyperdock
     - bartender
     - daisydisk
-    - istat-menus
+    - istat-menus4
     - adobe-photoshop-lightroom
 
 - name: Install Alfred app

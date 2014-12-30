@@ -8,6 +8,7 @@
     - homebrew/dupes
     - homebrew/versions
     - caskroom/cask
+    - caskroom/versions
 
 - name: Update Homebrew
   homebrew: update_homebrew=yes upgrade_all=yes

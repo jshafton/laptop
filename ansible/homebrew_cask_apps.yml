@@ -1,7 +1,7 @@
 ---
 
 - name: Install Homebrew Cask brew
-  homebrew: name=caskroom/cask/brew-cask state=latest
+  homebrew: name=brew-cask state=latest
 
 - name: Install Cask apps
   homebrew_cask: name={{ item }} state=present

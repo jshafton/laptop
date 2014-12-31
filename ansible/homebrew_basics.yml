@@ -1,4 +1,13 @@
 ---
+
+- name: Get Homebrew path
+  shell: brew --prefix
+  register: homebrew_path
+
+- name: Ensure Homebrew permissions
+  file: path={{ homebrew_path.stdout }} state=directory owner={{ ansible_ssh_user }} recurse=yes
+  sudo: yes
+
 - name: Update Homebrew
   homebrew: update_homebrew=yes
 

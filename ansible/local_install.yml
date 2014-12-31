@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   tasks:
-  - include: homebrew_basics.yml                      tags=brew
+  - include: homebrew_basics.yml                      tags=brew,basics
   - include: homebrew_services.yml                    tags=brew
   - include: ruby.yml                                 tags=devel
   - include: homebrew_other_development_languages.yml tags=brew,devel

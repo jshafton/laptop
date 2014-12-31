@@ -3,7 +3,7 @@
 - name: Remove all persistent Dock applications
   shell: dockutil --remove all
 
-- name: Set persistent Dock applications
+- name: Set persistent Dock applications (user)
   shell: dockutil --add '~/Applications/{{ item }}.app'
   with_items:
     - Path Finder
@@ -15,4 +15,8 @@
     - SourceTree
     - Spotify
     - nvALT
+
+- name: Set persistent Dock applications (system)
+  shell: dockutil --add '/Applications/{{ item }}.app'
+  with_items:
     - Calendar

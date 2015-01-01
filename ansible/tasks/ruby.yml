@@ -6,3 +6,29 @@
     - rbenv
     - ruby-build
     - rbenv-vars
+
+- name: Check installed Ruby version
+  shell: rbenv versions
+  register: rbenv_versions
+
+- name: Install Ruby version
+  shell: rbenv install -s {{ global_ruby_version }}
+  when: rbenv_versions.stdout.find('{{ global_ruby_version }}') == -1
+  register: ruby_install
+
+- name: Set global Ruby version
+  shell: rbenv global {{ global_ruby_version }}
+  when: ruby_install|changed
+
+- name: Update gem system
+  shell: gem update --system
+  when: ruby_install|changed
+
+- name: Install bundler
+  shell: gem install bundler --no-document && rbenv rehash
+  register: bundler_install
+  when: ruby_install|changed
+
+- name: Configure Bundler for parallel execution
+  shell: bundle config --global jobs {{ ansible_processor_cores }}
+  when: bundler_install|changed

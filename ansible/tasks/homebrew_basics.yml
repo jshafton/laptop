@@ -3,6 +3,7 @@
 - name: Get Homebrew path
   shell: brew --prefix
   register: homebrew_path
+  changed_when: false
 
 - name: Ensure Homebrew permissions
   file: path={{ homebrew_path.stdout }} state=directory owner={{ ansible_ssh_user }} recurse=yes
@@ -37,6 +38,7 @@
     - dockutil
     - elinks
     - git
+    - gh
     - gnu-getopt
     - htop-osx
     - go

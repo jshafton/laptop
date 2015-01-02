@@ -1,10 +1,14 @@
 ---
 
-- name: Install vim dependencies
-  homebrew_cask: name=xquartz state=present
-
 - name: Install terminal vim with Homebrew
-  homebrew: name=vim install_options=with-client-server state=latest
+  homebrew: name=vim state=latest
+
+  # NOTE: you may be included to include client-server mode for fun
+  #       usage of the vim "united-front" plugin; however, in OSX
+  #       Yosemite (or latest Homebrew), that mode causes Vim to be
+  #       installed with +xterm_clipboard, which causes the * register
+  #       for pasting to not-work. Sucks!
+  # homebrew: name=vim install_options=with-client-server state=latest
 
 - name: Install vimpager
   homebrew: name=vimpager state=latest

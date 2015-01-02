@@ -1,0 +1,17 @@
+---
+
+- name: Install node.js from Homebrew
+  homebrew: name=node state=latest
+
+- name: Get Homebrew path
+  shell: brew --prefix
+  register: homebrew_path
+  changed_when: false
+
+# Apparently the node installer has tends to mess up permissions here for node_modules
+- name: Ensure Homebrew permissions
+  file: path={{ homebrew_path.stdout }} state=directory owner={{ ansible_ssh_user }} recurse=yes
+  sudo: yes
+
+- name: Ensure latest NPM installation
+  npm: name=npm global=yes version='>=2.1'

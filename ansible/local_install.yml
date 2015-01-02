@@ -6,6 +6,7 @@
   - include: tasks/homebrew_vim.yml                         tags=brew,vim
   - include: tasks/homebrew_services.yml                    tags=brew,services
   - include: tasks/ruby.yml                                 tags=devel,ruby
+  - include: tasks/nodejs.yml                               tags=devel,node
   - include: tasks/homebrew_other_development_languages.yml tags=brew,devel
   - include: tasks/homebrew_cask_apps.yml                   tags=brew,cask,apps
   - include: tasks/homebrew_cask_fonts.yml                  tags=brew,fonts

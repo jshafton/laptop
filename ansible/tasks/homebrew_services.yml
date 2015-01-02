@@ -6,3 +6,6 @@
     - redis
     - postgresql
     - postgis
+
+- name: Configure Postgres to launch at startup
+  file: src=/usr/local/opt/postgresql/homebrew.mxcl.postgresql.plist dest=~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist state=link

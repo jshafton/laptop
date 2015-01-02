@@ -1,0 +1,13 @@
+---
+
+- name: Install vim dependencies
+  homebrew_cask: name=xquartz state=present
+
+- name: Install terminal vim with Homebrew
+  homebrew: name=vim install_options=with-client-server state=latest
+
+- name: Install vimpager
+  homebrew: name=vimpager state=latest
+
+- name: Install MacVim through Homebrew Cask
+  homebrew_cask: name=macvim state=present

@@ -3,7 +3,8 @@
   tasks:
   - include: tasks/dotfiles.yml                             tags=dotfiles
   - include: tasks/homebrew_basics.yml                      tags=brew,basics
-  - include: tasks/homebrew_services.yml                    tags=brew
+  - include: tasks/homebrew_vim.yml                         tags=brew,vim
+  - include: tasks/homebrew_services.yml                    tags=brew,services
   - include: tasks/ruby.yml                                 tags=devel,ruby
   - include: tasks/homebrew_other_development_languages.yml tags=brew,devel
   - include: tasks/homebrew_cask_apps.yml                   tags=brew,cask,apps

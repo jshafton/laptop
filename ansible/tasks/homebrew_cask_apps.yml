@@ -28,6 +28,7 @@
     - qlvideo
 
     # personal apps
+    - path-finder
     - dropbox
     - utorrent
     - vlc
@@ -40,9 +41,7 @@
     - nvalt
     - karabiner
     - bettertouchtool
-
-    # Site is currently down
-    # - caffeine
+    - caffeine
 
     # paid apps
     - bartender

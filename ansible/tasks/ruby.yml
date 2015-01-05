@@ -11,6 +11,7 @@
 - name: Check installed Ruby version
   shell: rbenv versions
   register: rbenv_versions
+  changed_when: false
 
 - name: Install Ruby version
   shell: rbenv install -s {{ global_ruby_version }}
@@ -25,11 +26,14 @@
   shell: gem update --system
   when: ruby_install|changed
 
+- name: Check if Bundler installed
+  shell: gem list
+  register: installed_gems
+  changed_when: false
+
 - name: Install bundler
   shell: gem install bundler --no-document && rbenv rehash
-  register: bundler_install
-  when: ruby_install|changed
+  when: installed_gems.stdout.find('bundler') == -1
 
 - name: Configure Bundler for parallel execution
-  shell: bundle config --global jobs {{ ansible_processor_cores }}
-  when: bundler_install|changed
+  shell: bundle config --global jobs {{ ansible_processor_cores }} creates=~/.bundle/config

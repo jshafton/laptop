@@ -15,3 +15,6 @@
 
 - name: Ensure latest NPM installation
   npm: name=npm global=yes version='>=2.1'
+
+- name: Install coffeescript
+  npm: name=coffee-script global=yes

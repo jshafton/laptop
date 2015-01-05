@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
   tasks:
+  - include: tasks/set_osx_defaults.yml                     tags=defaults
   - include: tasks/dotfiles.yml                             tags=dotfiles
   - include: tasks/homebrew_basics.yml                      tags=brew,basics
   - include: tasks/homebrew_vim.yml                         tags=brew,vim
@@ -10,7 +11,6 @@
   - include: tasks/homebrew_other_development_languages.yml tags=brew,devel
   - include: tasks/homebrew_cask_apps.yml                   tags=brew,cask,apps
   - include: tasks/homebrew_cask_fonts.yml                  tags=brew,fonts
-  - include: tasks/set_osx_defaults.yml                     tags=defaults
   - include: tasks/configure_dock.yml                       tags=dock
   - include: tasks/homebrew_completions.yml                 tags=brew,completions
   - include: tasks/homebrew_cleanup.yml                     tags=brew

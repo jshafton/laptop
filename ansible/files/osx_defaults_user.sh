@@ -264,8 +264,7 @@ defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://
 ###############################################################################
 
 for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" \
-  "Mail" "Safari" "SizeUp" "SystemUIServer" "Terminal" "Transmission" \
-  "Twitter" "iCal" "iTunes" "Google Notifier"; do
+  "Mail" "Safari" "SizeUp" "SystemUIServer" ; do
 killall "$app" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."

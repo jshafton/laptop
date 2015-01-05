@@ -20,6 +20,9 @@
     - caskroom/cask
     - caskroom/versions
 
+- name: Install Homebrew Cask brew
+  homebrew: name=brew-cask state=latest
+
 - name: Update Homebrew
   homebrew: update_homebrew=yes upgrade_all=yes
 

@@ -50,6 +50,7 @@
     - httpry
     - hub
     - iftop
+    - ngrep
     - json-c
     - libpng
     - mackup

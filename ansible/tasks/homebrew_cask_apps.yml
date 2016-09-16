@@ -8,12 +8,10 @@
     - adium
     - sourcetree
     - tunnelblick
-    - wkhtmltopdf
     - slack
-    - cord
     - google-chrome
+    - firefox
     - iterm2
-    - sublime-text3
     - virtualbox
     - vagrant
     - vagrant-manager
@@ -43,12 +41,12 @@
     - karabiner
     - bettertouchtool
     - caffeine
+    - crashplan
 
     # paid apps
     - bartender
     - daisydisk
     - istat-menus4
-    - adobe-photoshop-lightroom
 
 - name: Install Alfred app
   homebrew_cask: name=alfred state=present

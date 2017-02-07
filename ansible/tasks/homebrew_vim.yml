@@ -4,7 +4,12 @@
   homebrew: name=vim state=latest
 
 - name: Install neovim with Homebrew
-  homebrew: name=nvim state=latest
+  homebrew: name=neovim/neovim/neovim state=latest
+
+- name: Install neovim pip packages
+  pip: name={{ item }} state=latest
+  with_items:
+    - neovim
 
   # NOTE: you may be included to include client-server mode for fun
   #       usage of the vim "united-front" plugin; however, in OSX

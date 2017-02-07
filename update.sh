@@ -25,13 +25,20 @@ else
   brew install git
 fi
 
-echo "Installing Ansible..."
+echo "Installing Python..."
+if ( brew list --versions python &> /dev/null ); then
+  echo "Python already installed."
+else
+  brew install python
+fi
+
+echo "Installing Ansible via pip..."
 if ( which ansible  &> /dev/null ); then
   echo "Ansible already installed."
 else
-  brew install ansible
+  pip install ansible==1.9.6
 fi
 
 echo "Running Ansible playbook..."
 cd ansible
-ansible-playbook -i inventory -c local local_install.yml --ask-sudo-pass
+ansible-playbook -i inventory -c local local_install.yml --ask-sudo-pass "${@:1}"

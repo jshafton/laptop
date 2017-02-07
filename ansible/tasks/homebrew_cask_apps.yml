@@ -5,11 +5,11 @@
   with_items:
 
     # main dev apps
-    - adium
-    - sourcetree
+    - dash
     - tunnelblick
     - slack
     - google-chrome
+    - postman
     - firefox
     - iterm2
     - virtualbox
@@ -17,6 +17,10 @@
     - vagrant-manager
     - virtualbox
     - the-unarchiver
+    - screenhero
+    - lastpass
+    - sublime-text
+    - cord
 
     # quicklook plugins
     - qlcolorcode
@@ -29,29 +33,24 @@
     - path-finder
     - dropbox
     - google-drive
-    - utorrent
+    - google-photos-backup
+    - deluge
     - vlc
     - flux
     - spotify
     - spotify-notifications
     - android-file-transfer
     - handbrake
-    - send-to-kindle
     - nvalt
     - karabiner
-    - bettertouchtool
     - caffeine
     - crashplan
+    - telegram-desktop
+    - skype
+    - cyberduck
 
     # paid apps
     - bartender
     - daisydisk
-    - istat-menus4
-
-- name: Install Alfred app
-  homebrew_cask: name=alfred state=present
-  register: alfred_install
-
-- name: Link Homebrew folders into Alfred
-  command: brew cask alfred link
-  when: alfred_install|changed
+    - istat-menus
+    - alfred

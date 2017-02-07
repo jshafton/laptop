@@ -4,19 +4,16 @@
   shell: dockutil --remove all
 
 - name: Set persistent Dock applications (user)
-  shell: dockutil --add '~/Applications/{{ item }}.app'
-  with_items:
-    - Path Finder
-    - iTerm
-    - Google Chrome
-    - Adium
-    - Slack
-    - Dash
-    - SourceTree
-    - Spotify
-    - nvALT
-
-- name: Set persistent Dock applications (system)
   shell: dockutil --add '/Applications/{{ item }}.app'
   with_items:
+    - Path Finder
+    - Google Chrome
+    - Slack
+    - Telegram Desktop
+    - Kiwi for Gmail
     - Calendar
+    - Dash
+    - Spotify
+    - nvALT
+    - iTerm
+  ignore_errors: true

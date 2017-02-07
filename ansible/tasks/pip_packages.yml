@@ -3,5 +3,10 @@
 - name: Install pip packages
   pip: name={{ item }} state=present
   with_items:
+    - awscli
     - boto
+    - s3cmd
     - virtualenv
+    - elastalert
+    - pgcli
+    - riemann-client

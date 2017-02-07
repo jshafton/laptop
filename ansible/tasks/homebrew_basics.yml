@@ -20,9 +20,6 @@
     - caskroom/cask
     - caskroom/versions
 
-- name: Install Homebrew Cask brew
-  homebrew: name=brew-cask state=latest
-
 - name: Update Homebrew
   homebrew: update_homebrew=yes upgrade_all=yes
 
@@ -30,46 +27,56 @@
   homebrew: name={{ item }} state=latest
   with_items:
     - ack
-    - the_silver_searcher
-    - grep
+    - android-platform-tools
     - autojump
-    - curl
-    - wget
     - bash
+    - check_postgres
+    - cmake
     - coreutils
     - ctags
-    - cmake
+    - curl
+    - diffutils
     - dockutil
     - elinks
-    - git
+    - fasd
+    - fontconfig
+    - freetype
+    - fzf
     - gh
     - gnu-getopt
-    - htop-osx
+    - gnutls
     - go
+    - grep
+    - highlight
     - hping
+    - htop-osx
     - httperf
     - httpry
     - hub
     - iftop
-    - ngrep
+    - jq
     - json-c
-    - libpng
+    - leiningen
+    - less
     - mackup
     - mercurial
+    - mobile-shell
+    - moreutils
     - mtr
-    - mosh
+    - ngrep
+    - nmap
+    - openssl
     - pcre
-    - phantomjs
     - pigz
     - psgrep
+    - ranger
     - readline
     - reattach-to-user-namespace
     - rename
-    - qt
-    - s3cmd
+    - scrypt
+    - the_silver_searcher
     - tig
     - tmux
     - tree
     - watch
-    - weechat
-    - wrk
+    - wget

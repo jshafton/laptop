@@ -1,7 +1,7 @@
 ---
 
 - name: Clone dotfiles repository
-  git: repo=https://github.com/jshafton/dotfiles_new dest=~/.dotfiles
+  git: repo="{{ dotfiles_repo }}" dest=~/.dotfiles
   register: dotfiles_clone_result
 
 - name: Run dotfiles installer

@@ -5,27 +5,15 @@
   - include: tasks/dotfiles.yml                             tags=dotfiles
   - include: tasks/homebrew_basics.yml                      tags=brew,basics
   - include: tasks/homebrew_vim.yml                         tags=brew,vim
-  - include: tasks/homebrew_services.yml                    tags=brew,services
   - include: tasks/ruby.yml                                 tags=devel,ruby
-  - include: tasks/pip.yml                                  tags=devel,pip
+  - include: tasks/ruby_gems.yml                            tags=devel,ruby
+  - include: tasks/pip_packages.yml                         tags=devel,pip
   - include: tasks/nodejs.yml                               tags=devel,node
+  - include: tasks/nodejs_packages.yml                      tags=devel,node
   - include: tasks/homebrew_other_development_languages.yml tags=brew,devel
   - include: tasks/homebrew_cask_apps.yml                   tags=brew,cask,apps
   - include: tasks/homebrew_cask_fonts.yml                  tags=brew,fonts
+  - include: tasks/mac_app_store.yml                        tags=mas,apps
   - include: tasks/configure_dock.yml                       tags=dock
   - include: tasks/homebrew_completions.yml                 tags=brew,completions
   - include: tasks/homebrew_cleanup.yml                     tags=brew
-
-  # TODO:
-  # --------------------------
-  # Install python / pip stuff
-
-
-  # Apps in Mac App Store:
-  # ----------------------
-  # * HyperDock
-  # * Dash
-  # * DragonDrop
-  # * SSH Tunnel Manager
-  # * Monosnap
-  # * Kindle

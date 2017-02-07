@@ -1,0 +1,11 @@
+---
+
+- name: Install mas CLI app via brew
+  homebrew: name=mas state=latest
+
+- name: Install App Store apps
+  shell: mas install {{ item }}
+  with_items:
+    - 986304488 # Kiwi for Gmail
+    - 421337962 # WeatherMan Lite
+    - 449830122 # HyperDock

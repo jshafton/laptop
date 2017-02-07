@@ -1,0 +1,7 @@
+---
+
+- name: Install Ruby gems
+  gem: name={{ item }} state=latest
+  with_items:
+    - tmuxinator
+    - bropages

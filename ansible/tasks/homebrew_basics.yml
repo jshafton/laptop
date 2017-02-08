@@ -41,7 +41,6 @@
     - fasd
     - fontconfig
     - freetype
-    - fzf
     - gh
     - gnu-getopt
     - gnutls

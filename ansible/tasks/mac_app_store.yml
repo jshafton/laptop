@@ -9,3 +9,7 @@
     - 986304488 # Kiwi for Gmail
     - 421337962 # WeatherMan Lite
     - 449830122 # HyperDock
+    - 497799835 # Xcode
+
+- name: Ensure App Store apps are up to date
+  shell: mas upgrade

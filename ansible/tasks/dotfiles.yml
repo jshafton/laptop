@@ -1,7 +1,7 @@
 ---
 
 - name: Clone dotfiles repository
-  git: repo="{{ dotfiles_repo }}" dest=~/.dotfiles
+  git: repo="{{ dotfiles_repo }}" dest=~/.dotfiles force=no update=no
   register: dotfiles_clone_result
 
 - name: Run dotfiles installer

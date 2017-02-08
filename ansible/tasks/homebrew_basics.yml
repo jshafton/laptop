@@ -30,6 +30,7 @@
     - android-platform-tools
     - autojump
     - bash
+    - bash-completion
     - check_postgres
     - cmake
     - coreutils
@@ -42,6 +43,7 @@
     - fontconfig
     - freetype
     - gh
+    - git
     - gnu-getopt
     - gnutls
     - go

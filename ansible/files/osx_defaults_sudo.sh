@@ -26,3 +26,15 @@ sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Vol
 
 # Disable local Time Machine backups
 sudo tmutil disablelocal
+
+###############################################################################
+# Security                                                                    #
+###############################################################################
+
+# When macOS connects to new networks, it probes the network and launches a
+# Captive Portal assistant utility if connectivity can't be determined.  An
+# attacker could trigger the utility and direct a Mac to a site with malware
+# without user interaction, so it's best to disable this feature and log in to
+# captive portals using your regular Web browser, provided you have first disable
+# any custom dns and/or proxy settings.
+defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false

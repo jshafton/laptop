@@ -14,6 +14,7 @@
   - include: tasks/homebrew_cask_apps.yml                   tags=brew,cask,apps
   - include: tasks/homebrew_cask_fonts.yml                  tags=brew,fonts
   - include: tasks/mac_app_store.yml                        tags=mas,apps
+  - include: tasks/software_updates.yml                     tags=mas,updates
   - include: tasks/configure_dock.yml                       tags=dock
   - include: tasks/homebrew_completions.yml                 tags=brew,completions
   - include: tasks/homebrew_cleanup.yml                     tags=brew

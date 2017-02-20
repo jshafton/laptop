@@ -1,0 +1,6 @@
+---
+
+- name: Install software updates
+  shell: softwareupdate --install --all 2>&1
+  register: update_command
+  changed_when: "'No updates are available' not in update_command.stdout"

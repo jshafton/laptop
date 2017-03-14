@@ -21,6 +21,7 @@
     - lastpass
     - sublime-text
     - cord
+    - libreoffice
 
     # quicklook plugins
     - qlcolorcode
@@ -55,3 +56,5 @@
     - daisydisk
     - istat-menus
     - alfred
+    - little-snitch
+    - micro-snitch

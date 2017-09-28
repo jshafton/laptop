@@ -75,6 +75,7 @@
     - reattach-to-user-namespace
     - rename
     - scrypt
+    - shellcheck
     - the_silver_searcher
     - tig
     - tmux

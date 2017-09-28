@@ -6,3 +6,6 @@
     - yarn
     - coffee-script
     - jshint
+    - eslint
+    - coffeelint
+    - jsonlint

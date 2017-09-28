@@ -10,3 +10,6 @@
     - elastalert
     - pgcli
     - riemann-client
+    - ansible-lint
+    - yamllint
+    - vim-vint

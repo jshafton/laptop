@@ -7,7 +7,7 @@
     - boto
     - s3cmd
     - virtualenv
-    - elastalert
+    - psycopg2-binary
     - pgcli
     - riemann-client
     - ansible-lint

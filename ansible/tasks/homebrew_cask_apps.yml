@@ -15,12 +15,8 @@
     - virtualbox
     - vagrant
     - vagrant-manager
-    - virtualbox
     - the-unarchiver
-    - screenhero
     - lastpass
-    - sublime-text
-    - cord
     - libreoffice
     - wkhtmltopdf
 
@@ -34,9 +30,6 @@
     # personal apps
     - path-finder
     - dropbox
-    - google-drive
-    - google-photos-backup
-    - deluge
     - vlc
     - flux
     - spotify
@@ -46,10 +39,8 @@
     - nvalt
     - karabiner
     - caffeine
-    - crashplan
     - telegram-desktop
     - skype
-    - cyberduck
     - calibre
 
     # paid apps

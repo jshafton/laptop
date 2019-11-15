@@ -15,10 +15,7 @@
 - name: Install Homebrew taps
   homebrew_tap: name={{ item }} state=present
   with_items:
-    - homebrew/dupes
-    - homebrew/versions
-    - caskroom/cask
-    - caskroom/versions
+    - homebrew/cask-versions
 
 - name: Update Homebrew
   homebrew: update_homebrew=yes upgrade_all=yes
@@ -42,7 +39,6 @@
     - fasd
     - fontconfig
     - freetype
-    - gh
     - git
     - gnu-getopt
     - gnutls

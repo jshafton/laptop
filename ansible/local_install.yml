@@ -10,6 +10,7 @@
   - include: tasks/pip_packages.yml                         tags=devel,pip
   - include: tasks/nodejs.yml                               tags=devel,node
   - include: tasks/nodejs_packages.yml                      tags=devel,node
+  - include: tasks/java_scala.yml                           tags=devel,java,scala
   - include: tasks/homebrew_other_development_languages.yml tags=brew,devel
   - include: tasks/homebrew_cask_apps.yml                   tags=brew,cask,apps
   - include: tasks/homebrew_cask_fonts.yml                  tags=brew,fonts

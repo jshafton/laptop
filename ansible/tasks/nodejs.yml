@@ -1,7 +1,7 @@
 ---
 
 - name: Clone NVM repo
-  git: repo="https://github.com/creationix/nvm.git" dest="{{ nvm_directory }}" update=no
+  git: repo="https://github.com/nvm-sh/nvm.git" dest="{{ nvm_directory }}" update=no
 
 - name: Figure out latest released NVM tag
   shell: git describe --abbrev=0 --tags --match "v[0-9]*" origin
@@ -11,7 +11,7 @@
   changed_when: false
 
 - name: Check out latest NVM tag
-  git: repo="https://github.com/creationix/nvm.git" dest="{{ nvm_directory }}" version="{{ git_nvm_tag.stdout }}"
+  git: repo="https://github.com/nvm-sh/nvm.git" dest="{{ nvm_directory }}" version="{{ git_nvm_tag.stdout }}"
 
 - name: Install node.js
   shell: "{{ nvm_env_setup_command }} && nvm install {{ global_nodejs_version }} && nvm alias default {{ global_nodejs_version }}"

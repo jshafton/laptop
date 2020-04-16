@@ -6,14 +6,15 @@
 - name: Set persistent Dock applications (user)
   shell: dockutil --add '/Applications/{{ item }}.app'
   with_items:
-    - Path Finder
+    - Finder
+    - Telegram Desktop
     - Google Chrome
     - Slack
-    - Telegram Desktop
     - Kiwi for Gmail
     - Calendar
     - Dash
-    - Spotify
     - nvALT
     - iTerm
+    - Spotify
+    - Outlook
   ignore_errors: true

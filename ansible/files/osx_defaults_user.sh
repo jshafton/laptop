@@ -31,11 +31,20 @@ defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
 # Restart automatically if the computer freezes
 systemsetup -setrestartfreeze on
 
+# Disable automatic capitalization as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
+# Disable automatic period substitution as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
 # Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -80,10 +89,7 @@ defaults write com.apple.BezelServices kDim -bool true
 defaults write com.apple.BezelServices kDimTime -int 300
 
 # Set the timezone; see `systemsetup -listtimezones` for other values
-systemsetup -settimezone "America/Chicago" > /dev/null
-
-# Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+systemsetup -settimezone "America/Denver" > /dev/null
 
 ###############################################################################
 # Screen                                                                      #
@@ -180,6 +186,10 @@ chflags nohidden ~/Library
 
 # Enable text selection in Quick Look
 defaults write -g QLEnableTextSelection -bool true
+
+# Use list view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `clmv`, `glyv`
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #

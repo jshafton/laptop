@@ -17,7 +17,6 @@
     - vagrant-manager
     - the-unarchiver
     - lastpass
-    - libreoffice
     - wkhtmltopdf
 
     # quicklook plugins
@@ -27,8 +26,11 @@
     - qlstephen
     - qlvideo
 
+    # work
+    - microsoft-outlook
+    - microsoft-excel
+
     # personal apps
-    - path-finder
     - dropbox
     - vlc
     - flux
@@ -40,8 +42,14 @@
     - karabiner
     - caffeine
     - telegram-desktop
-    - skype
     - calibre
+    - android-messages
+    - remember-the-milk
+    - kindle
+    - send-to-kindle
+    - bitbar
+    - transmission
+    - plex-media-server
 
     # paid apps
     - bartender

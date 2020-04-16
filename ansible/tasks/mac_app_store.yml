@@ -6,10 +6,12 @@
 - name: Install App Store apps
   shell: mas install {{ item }}
   with_items:
-    - 986304488 # Kiwi for Gmail
-    - 421337962 # WeatherMan Lite
-    - 449830122 # HyperDock
-    - 497799835 # Xcode
+    - 986304488  # Kiwi for Gmail
+    - 421337962  # WeatherMan Lite
+    - 449830122  # HyperDock
+    - 497799835  # Xcode
+    - 499148234  # DragonDrop
+    - 1303222628 # Paprika Recipe Manager
 
 - name: Ensure App Store apps are up to date
   shell: mas upgrade

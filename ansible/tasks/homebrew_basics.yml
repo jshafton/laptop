@@ -36,7 +36,6 @@
     - diffutils
     - dockutil
     - elinks
-    - fasd
     - fontconfig
     - freetype
     - git
@@ -55,7 +54,6 @@
     - json-c
     - leiningen
     - less
-    - mackup
     - mercurial
     - mobile-shell
     - moreutils

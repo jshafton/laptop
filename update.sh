@@ -21,7 +21,7 @@ echo "Installing Homebrew..."
 if ( which brew &> /dev/null ); then
   echo "Homebrew already installed."
 else
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 echo "Installing Git..."

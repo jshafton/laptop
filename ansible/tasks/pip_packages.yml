@@ -10,6 +10,8 @@
     - psycopg2-binary
     - pgcli
     - riemann-client
-    - ansible-lint
     - yamllint
     - vim-vint
+
+- name: Install pip packages
+  pip: name=ansible-lint state=present version=3.5.1

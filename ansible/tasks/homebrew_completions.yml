@@ -1,6 +1,4 @@
 ---
-- name: Install homebrew completions tap
-  homebrew_tap: name=homebrew/completions state=present
 
 - name: Install completion formulas with Homebrew
   homebrew: name={{ item }}-completion state=latest

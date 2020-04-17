@@ -1,6 +1,6 @@
 ---
 - name: Install homebrew fonts tap
-  homebrew_tap: name=caskroom/fonts state=present
+  homebrew_tap: name=homebrew/cask-fonts state=present
 
 - name: Update Homebrew
   homebrew: update_homebrew=yes
@@ -13,5 +13,5 @@
     - anonymice-powerline
     - droid-sans-mono-for-powerline
     - inconsolata-for-powerline
-    - meslo-lg-for-powerline
+    - meslo-for-powerline
     - ubuntu-mono-derivative-powerline

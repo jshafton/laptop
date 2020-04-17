@@ -12,7 +12,7 @@
     - postman
     - firefox
     - iterm2
-    - virtualbox
+    - virtualbox # requires some permissions at the OS level
     - vagrant
     - vagrant-manager
     - the-unarchiver
@@ -26,22 +26,16 @@
     - qlstephen
     - qlvideo
 
-    # work
-    - microsoft-outlook
-    - microsoft-excel
-
     # personal apps
     - dropbox
     - vlc
     - flux
     - spotify
     - spotify-notifications
-    - android-file-transfer
     - handbrake
     - nvalt
-    - karabiner
     - caffeine
-    - telegram-desktop
+    - telegram
     - calibre
     - android-messages
     - remember-the-milk
@@ -58,3 +52,7 @@
     - alfred
     - little-snitch
     - micro-snitch
+
+    # work
+    - microsoft-outlook
+    - microsoft-excel

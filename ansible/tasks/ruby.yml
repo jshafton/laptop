@@ -22,18 +22,22 @@
   shell: rbenv global {{ global_ruby_version }}
   when: ruby_install|changed
 
-- name: Update gem system
-  shell: gem update --system
-  when: ruby_install|changed
+#   ===============================
+#   TODO: reload with rbenv somehow
+#   ===============================
 
-- name: Check if Bundler installed
-  shell: gem list
-  register: installed_gems
-  changed_when: false
-
-- name: Install bundler
-  shell: gem install bundler --no-document && rbenv rehash
-  when: installed_gems.stdout.find('bundler') == -1
+# - name: Update gem system
+#   shell: gem update --system
+#   when: ruby_install|changed
+#
+# - name: Check if Bundler installed
+#   shell: gem list
+#   register: installed_gems
+#   changed_when: false
+#
+# - name: Install bundler
+#   shell: gem install bundler --no-document && rbenv rehash
+#   when: installed_gems.stdout.find('bundler') == -1
 
 - name: Configure Bundler for parallel execution
   shell: bundle config --global jobs {{ ansible_processor_cores }} creates=~/.bundle/config

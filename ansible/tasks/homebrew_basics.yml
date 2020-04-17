@@ -5,17 +5,8 @@
   register: homebrew_path
   changed_when: false
 
-- name: Ensure Homebrew permissions
-  file: path={{ homebrew_path.stdout }} state=directory owner={{ ansible_ssh_user }} recurse=yes
-  sudo: yes
-
 - name: Update Homebrew
   homebrew: update_homebrew=yes
-
-- name: Install Homebrew taps
-  homebrew_tap: name={{ item }} state=present
-  with_items:
-    - homebrew/cask-versions
 
 - name: Update Homebrew
   homebrew: update_homebrew=yes upgrade_all=yes
@@ -24,11 +15,9 @@
   homebrew: name={{ item }} state=latest
   with_items:
     - ack
-    - android-platform-tools
     - autojump
     - bash
     - bash-completion
-    - check_postgres
     - cmake
     - coreutils
     - ctags
@@ -55,18 +44,15 @@
     - leiningen
     - less
     - mercurial
-    - mobile-shell
     - moreutils
     - mtr
     - ngrep
     - nmap
-    - openssl
     - pcre
     - pigz
     - psgrep
     - ranger
     - readline
-    - reattach-to-user-namespace
     - rename
     - scrypt
     - shellcheck

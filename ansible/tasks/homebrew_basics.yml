@@ -15,7 +15,6 @@
   homebrew: name={{ item }} state=latest
   with_items:
     - ack
-    - autojump
     - bash
     - bash-completion
     - cmake
@@ -25,6 +24,7 @@
     - diffutils
     - dockutil
     - elinks
+    - fasd
     - fontconfig
     - freetype
     - git

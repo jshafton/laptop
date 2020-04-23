@@ -3,6 +3,5 @@
 - name: Install other dev languages with Homebrew
   homebrew: name={{ item }} state=latest
   with_items:
-    - python
     - elixir
     - erlang

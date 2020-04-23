@@ -5,15 +5,3 @@
 
 - name: Install neovim with Homebrew
   homebrew: name=neovim state=latest
-
-- name: Install neovim pip packages
-  pip: name={{ item }} state=latest
-  with_items:
-    - neovim
-
-  # NOTE: you may be inclined to include client-server mode for fun
-  #       usage of the vim "united-front" plugin; however, in OSX
-  #       Yosemite (or latest Homebrew), that mode causes Vim to be
-  #       installed with +xterm_clipboard, which causes the * register
-  #       for pasting to not-work. Sucks!
-  # homebrew: name=vim install_options=with-client-server state=latest

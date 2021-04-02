@@ -4,7 +4,7 @@
   shell: "{{ nvm_env_setup_command }} && npm install --global {{ item }}"
   with_items:
     - yarn
-    - coffee-script
+    - coffeescript
     - jshint
     - eslint
     - coffeelint

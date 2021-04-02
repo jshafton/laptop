@@ -20,9 +20,7 @@
     - wkhtmltopdf
 
     # quicklook plugins
-    - qlcolorcode
-    - qlmarkdown
-    - quicklook-json
+    - syntax-highlight
     - qlstephen
     - qlvideo
 

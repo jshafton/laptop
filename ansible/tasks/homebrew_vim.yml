@@ -5,3 +5,6 @@
 
 - name: Install neovim with Homebrew
   homebrew: name=neovim state=latest
+
+- name: Install GUI vim with Homebrew
+  homebrew: name=vimr state=latest

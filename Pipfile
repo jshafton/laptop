@@ -7,6 +7,7 @@ verify_ssl = true
 
 [packages]
 ansible = "==1.9.6"
+cryptography = "==3.3.2"
 
 [requires]
 python_version = "2.7"

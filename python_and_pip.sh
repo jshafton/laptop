@@ -3,7 +3,7 @@
 set -eo pipefail
 
 GLOBAL_PYTHON_2_VERSION=2.7.16
-GLOBAL_PYTHON_3_VERSION=3.8.2
+GLOBAL_PYTHON_3_VERSION=3.8.8
 
 echo "Installing Python and dependencies..."
 

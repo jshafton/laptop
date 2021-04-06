@@ -6,7 +6,9 @@
   homebrew: update_homebrew=yes
 
 - name: Install fonts with Homebrew Cask
-  homebrew: name=font-{{ item }} state=present
+  shell: brew install font-{{ item }}
+  register: brew_install
+  changed_when: "'already installed' not in brew_install.stderr"
   with_items:
     - source-code-pro
     - source-code-pro-for-powerline

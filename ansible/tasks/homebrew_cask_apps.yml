@@ -1,7 +1,9 @@
 ---
 
 - name: Install Cask apps
-  homebrew: name={{ item }} state=present
+  shell: brew install {{ item }}
+  register: brew_install
+  changed_when: "'already installed' not in brew_install.stderr"
   with_items:
 
     # main dev apps

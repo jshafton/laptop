@@ -4,7 +4,9 @@
   homebrew_tap: name="AdoptOpenJDK/openjdk" state=present
 
 - name: Install Java versions
-  homebrew: name={{ item.package }} state=present
+  shell: brew install {{ item.package }}
+  register: brew_install
+  changed_when: "'already installed' not in brew_install.stderr"
   with_items: java_versions
 
 - name: Install scala

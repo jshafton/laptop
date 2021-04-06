@@ -6,7 +6,7 @@
   - include: tasks/homebrew_basics.yml                      tags=brew,basics
   - include: tasks/homebrew_vim.yml                         tags=brew,vim
   - include: tasks/ruby.yml                                 tags=devel,ruby
-  - include: tasks/ruby_gems.yml                            tags=devel,ruby
+  - include: tasks/ruby_gems.yml                            tags=devel,ruby,gems
   - include: tasks/nodejs.yml                               tags=devel,node
   - include: tasks/nodejs_packages.yml                      tags=devel,node
   - include: tasks/java_scala.yml                           tags=devel,java,scala

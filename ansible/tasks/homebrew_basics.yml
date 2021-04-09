@@ -65,3 +65,4 @@
     - tree
     - watch
     - wget
+    - direnv

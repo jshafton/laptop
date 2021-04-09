@@ -28,6 +28,7 @@
     - fontconfig
     - freetype
     - git
+    - svn # required for brew font installs
     - gnu-getopt
     - gnutls
     - go

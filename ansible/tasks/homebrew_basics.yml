@@ -44,7 +44,7 @@
     - leiningen
     - less
     - bat
-    - delta
+    - git-delta
     - mercurial
     - moreutils
     - mtr

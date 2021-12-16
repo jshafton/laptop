@@ -62,8 +62,8 @@ PATH="$libpq_path/bin:$PATH" LDFLAGS="-L$libpq_path/lib -L$openssl_path/lib" CPP
   pip3 install pgcli
 
 echo "Installing python support for Neovim..."
-pyenv virtualenv "$GLOBAL_PYTHON_2_VERSION" neovim2
-pyenv virtualenv "$GLOBAL_PYTHON_3_VERSION" neovim3
+pyenv virtualenv --force "$GLOBAL_PYTHON_2_VERSION" neovim2
+pyenv virtualenv --force "$GLOBAL_PYTHON_3_VERSION" neovim3
 
 pyenv activate neovim2
 pip install neovim
@@ -84,5 +84,10 @@ else
   brew install pipenv
   pipenv --python "$(cat .python-version)"
 fi
+
+# TODO: something weird with cryptography package
+# brew install pkg-config libffi openssl
+# env LDFLAGS="-L$(brew --prefix openssl)/lib" CFLAGS="-I$(brew --prefix openssl)/include" pip install cryptography
+# env LDFLAGS="-L$(brew --prefix openssl)/lib" CFLAGS="-I$(brew --prefix openssl)/include" pipenv install cryptography
 
 pipenv install

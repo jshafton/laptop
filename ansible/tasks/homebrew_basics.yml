@@ -28,6 +28,7 @@
     - fontconfig
     - freetype
     - git
+    - lazygit
     - svn # required for brew font installs
     - gnu-getopt
     - gnutls
@@ -54,7 +55,6 @@
     - pcre
     - pigz
     - psgrep
-    - ranger
     - readline
     - rename
     - scrypt

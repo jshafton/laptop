@@ -56,10 +56,10 @@ brew list openssl >/dev/null || brew install openssl
 libpq_path=$(brew --prefix libpq)
 openssl_path=$(brew --prefix openssl)
 
-echo "Installing pgcli in global 3.8 python..."
+echo "Installing global 3.8 python packages..."
 export PYENV_VERSION="$GLOBAL_PYTHON_3_VERSION"
 PATH="$libpq_path/bin:$PATH" LDFLAGS="-L$libpq_path/lib -L$openssl_path/lib" CPPFLAGS="-I$libpq_path/include -I$openssl_path/include" \
-  pip3 install pgcli
+  pip3 install pgcli pynvim ranger-fm
 
 echo "Installing python support for Neovim..."
 pyenv virtualenv --force "$GLOBAL_PYTHON_2_VERSION" neovim2

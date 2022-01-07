@@ -120,6 +120,7 @@ EOF
 
 notify "==> Installing homebrew fonts"
 brew bundle --file=-<<EOF
+tap "homebrew/cask-fonts"
 cask "font-source-code-pro"
 cask "font-source-code-pro-for-powerline"
 cask "font-anonymice-powerline"

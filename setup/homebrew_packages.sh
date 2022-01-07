@@ -77,6 +77,7 @@ EOF
 notify "==> Installing homebrew cask packages"
 brew bundle --file=-<<EOF
 # main dev apps
+cask "iterm2"
 cask "vimr"
 cask "authy"
 cask "docker"

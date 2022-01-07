@@ -31,6 +31,13 @@ else
   brew install git
 fi
 
+echo "Installing Bash..."
+if ( which bash &> /dev/null ); then
+  echo "Bash already installed."
+else
+  brew install bash
+fi
+
 echo "Installing Python/pyenv/pipenv and python packages..."
 this_dir="${BASH_SOURCE%/*}"
 "$this_dir/python_and_pip.sh"

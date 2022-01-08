@@ -1,4 +1,8 @@
-#! /bin/sh
+#! /usr/bin/env bash
+
+notify() {
+  echo "$(date +%H:%M:%S) - $1"
+}
 
 # Ask for the administrator password upfront
 sudo -v
@@ -17,31 +21,24 @@ else
   done
 fi
 
-echo "Installing Homebrew..."
-if ( which brew &> /dev/null ); then
-  echo "Homebrew already installed."
-else
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-fi
+notify "Installing homebrew packages"
+source "${BASH_SOURCE%/*}/setup/homebrew_packages.sh"
 
-echo "Installing Git..."
-if ( which git &> /dev/null ); then
-  echo "Git already installed."
-else
-  brew install git
-fi
+notify "Installing Python and pip packages"
+source "${BASH_SOURCE%/*}/setup/python_and_pip.sh"
 
-echo "Installing Bash..."
-if ( which bash &> /dev/null ); then
-  echo "Bash already installed."
-else
-  brew install bash
-fi
+notify "Installing nodejs and npm packages"
+source "${BASH_SOURCE%/*}/setup/nodejs_and_npm.sh"
 
-echo "Installing Python/pyenv/pipenv and python packages..."
-this_dir="${BASH_SOURCE%/*}"
-"$this_dir/python_and_pip.sh"
+notify "Installing Ruby and gems"
+source "${BASH_SOURCE%/*}/setup/ruby_and_gems.sh"
 
-echo "Running Ansible playbook..."
-cd ansible
-pipenv run ansible-playbook -i inventory -c local local_install.yml --ask-sudo-pass "${@:1}"
+notify "Configuring macOS defaults"
+source "${BASH_SOURCE%/*}/setup/macos_defaults_sudo.sh"
+source "${BASH_SOURCE%/*}/setup/macos_defaults_user.sh"
+
+notify "Installing Mac App Store apps"
+source "${BASH_SOURCE%/*}/setup/mac_app_store.sh"
+
+notify "Installing software updates"
+source "${BASH_SOURCE%/*}/setup/software_updates.sh"

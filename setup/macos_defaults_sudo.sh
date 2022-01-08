@@ -22,14 +22,16 @@ sudo pmset -a sms 0
 # Disable Spotlight indexing for any volume that gets mounted and has not yet
 # been indexed before.
 # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+# NOTE: no longer works in macOS monterey
+# sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 
 ###############################################################################
 # Time Machine                                                                #
 ###############################################################################
 
 # Disable local Time Machine backups
-sudo tmutil disablelocal
+# NOTE: no longer works in macOS monterey
+# sudo tmutil disablelocal
 
 ###############################################################################
 # Security                                                                    #
@@ -41,4 +43,8 @@ sudo tmutil disablelocal
 # without user interaction, so it's best to disable this feature and log in to
 # captive portals using your regular Web browser, provided you have first disable
 # any custom dns and/or proxy settings.
-defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
+# NOTE: no longer works in macOS monterey
+# defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
+
+# Restart automatically if the computer freezes
+sudo systemsetup -setrestartfreeze on

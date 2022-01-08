@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 # Menu bar: disable transparency
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
@@ -27,9 +29,6 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Display ASCII control characters using caret notation in standard text views
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
 defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
-
-# Restart automatically if the computer freezes
-systemsetup -setrestartfreeze on
 
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
@@ -279,8 +278,11 @@ defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://
 # Kill affected applications                                                  #
 ###############################################################################
 
+set +e # this will return non-zero if process isn't running
 for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" \
   "Mail" "Safari" "SizeUp" "SystemUIServer" ; do
-killall "$app" > /dev/null 2>&1
+  killall "$app" > /dev/null 2>&1
 done
+set -e
+
 echo "Done. Note that some of these changes require a logout/restart to take effect."

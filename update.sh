@@ -10,6 +10,9 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+notify "Installing Rosetta 2"
+softwareupdate --install-rosetta --agree-to-license
+
 echo "Installing xcode command-line tools..."
 if ( xcode-select -p &> /dev/null ); then
   echo "xcode command-line tools already installed."

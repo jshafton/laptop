@@ -97,6 +97,7 @@ cask "firefox"
 cask "google-chrome"
 cask "dash"
 cask "postman"
+cask "slack"
 
 # quicklook plugins
 cask "syntax-highlight"

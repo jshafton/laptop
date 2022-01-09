@@ -15,7 +15,7 @@ notify() {
 }
 
 install_asdf_plugin() {
-  if asdf plugin list "$1" >/dev/null; then
+  if asdf plugin list | grep -Fq "$1" >/dev/null; then
     notify "asdf plugin $1 already installed"
   else
     asdf plugin add "$1"

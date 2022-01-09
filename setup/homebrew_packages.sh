@@ -12,7 +12,7 @@ if ( command -v brew &> /dev/null ); then
   notify "Homebrew already installed."
   brew update
 else
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  CI=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
   # Add brew bin to the path
   if [[ -f /opt/homebrew/bin/brew ]]; then

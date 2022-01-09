@@ -121,6 +121,7 @@ cask "notion"
 cask "bitwarden"
 cask "yt-music"
 cask "google-drive"
+cask "skitch"
 
 # paid apps
 cask "bartender"

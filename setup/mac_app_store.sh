@@ -25,6 +25,7 @@ install_mas_app 497799835  "xcode"
 install_mas_app 986304488  "Kiwi for Gmail"
 install_mas_app 449830122  "HyperDock"
 install_mas_app 1303222628 "Paprika Recipe Manager"
+install_mas_app 1352778147 "Bitwarden"
 
 notify "==> Upgrading app store apps"
 mas upgrade

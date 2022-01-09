@@ -96,6 +96,7 @@ cask "datagrip"
 cask "firefox"
 cask "google-chrome"
 cask "dash"
+cask "postman"
 
 # quicklook plugins
 cask "syntax-highlight"

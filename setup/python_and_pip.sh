@@ -110,6 +110,7 @@ notify "==> Installing global versions of python packages"
 # delta
 install_asdf_plugin awscli
 asdf install awscli "$GLOBAL_AWSCLI_VERSION"
+asdf global awscli "$GLOBAL_AWSCLI_VERSION"
 
 notify "==> Updating python shims"
 asdf reshim python

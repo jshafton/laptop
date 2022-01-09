@@ -4,6 +4,10 @@ set -eo pipefail
 
 GLOBAL_RUBY_VERSION=3.1.0
 
+if [ -f "${HOMEBREW_PREFIX}/opt/asdf/libexec/asdf.sh" ]; then
+  . "${HOMEBREW_PREFIX}/opt/asdf/libexec/asdf.sh"
+fi
+
 notify() {
   echo "$(date +%H:%M:%S) - $1"
 }

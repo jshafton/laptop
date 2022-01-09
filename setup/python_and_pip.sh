@@ -6,6 +6,10 @@ GLOBAL_PYTHON_2_VERSION=2.7.18
 GLOBAL_PYTHON_3_VERSION=3.10.1
 GLOBAL_AWSCLI_VERSION=2.4.9
 
+if [ -f "${HOMEBREW_PREFIX}/opt/asdf/libexec/asdf.sh" ]; then
+  . "${HOMEBREW_PREFIX}/opt/asdf/libexec/asdf.sh"
+fi
+
 notify() {
   echo "$(date +%H:%M:%S) - $1"
 }

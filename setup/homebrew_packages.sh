@@ -13,6 +13,13 @@ if ( command -v brew &> /dev/null ); then
   brew update
 else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+  # Add brew bin to the path
+  if [[ -f /opt/homebrew/bin/brew ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [[ -f /usr/local/bin/brew ]]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+  fi;
 fi
 
 notify "==> Installing basic homebrew packages"

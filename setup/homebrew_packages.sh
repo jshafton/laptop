@@ -124,6 +124,10 @@ cask "yt-music"
 cask "google-drive"
 cask "skitch"
 
+# logitech drivers for mouse/keyboard
+tap homebrew/cask-drivers
+cask "homebrew/cask-drivers/logitech-options"
+
 # paid apps
 cask "bartender"
 cask "daisydisk"

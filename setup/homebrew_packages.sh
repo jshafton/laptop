@@ -127,7 +127,7 @@ cask "google-drive"
 cask "skitch"
 
 # logitech drivers for mouse/keyboard
-tap homebrew/cask-drivers
+tap "homebrew/cask-drivers"
 cask "homebrew/cask-drivers/logitech-options"
 
 # paid apps

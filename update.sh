@@ -43,5 +43,10 @@ source "${BASH_SOURCE%/*}/setup/macos_defaults_user.sh"
 notify "Installing Mac App Store apps"
 source "${BASH_SOURCE%/*}/setup/mac_app_store.sh"
 
+notify "Configuring dock"
+source "${BASH_SOURCE%/*}/setup/configure_dock.sh"
+
 notify "Installing software updates"
 source "${BASH_SOURCE%/*}/setup/software_updates.sh"
+
+notify "==> DONE! <=="

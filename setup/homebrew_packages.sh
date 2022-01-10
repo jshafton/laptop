@@ -166,3 +166,6 @@ brew "rake-completion"
 brew "ruby-completion"
 brew "tmuxinator-completion"
 EOF
+
+notify "==> Performing homebrew cleanup"
+brew cleanup

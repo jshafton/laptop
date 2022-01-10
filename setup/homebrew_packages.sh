@@ -87,6 +87,17 @@ brew "wget"
 # CLI speed test
 tap "teamookla/speedtest"
 brew "speedtest"
+
+# PHP for Alfred github plugin
+brew "argon2"
+brew "aspell"
+brew "freetds"
+brew "gd"
+brew "icu4c"
+brew "libsodium"
+brew "libzip"
+brew "tidy-html5"
+brew "php", args: ["ignore-dependencies"]
 EOF
 
 notify "==> Installing homebrew cask packages"

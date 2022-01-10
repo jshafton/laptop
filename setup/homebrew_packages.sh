@@ -83,6 +83,10 @@ brew "tree"
 brew "vim"
 brew "watch"
 brew "wget"
+
+# CLI speed test
+tap "teamookla/speedtest"
+brew "speedtest"
 EOF
 
 notify "==> Installing homebrew cask packages"

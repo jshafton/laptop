@@ -117,6 +117,7 @@ cask "google-chrome"
 cask "dash"
 cask "postman"
 cask "slack"
+cask "tunnelblick"
 
 # quicklook plugins
 cask "syntax-highlight"

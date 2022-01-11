@@ -84,6 +84,10 @@ brew "vim"
 brew "watch"
 brew "wget"
 
+# Packer
+tap "hashicorp/tap"
+brew "hashicorp/tap/packer"
+
 # CLI speed test
 tap "teamookla/speedtest"
 brew "speedtest"

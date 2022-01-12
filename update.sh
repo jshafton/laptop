@@ -36,6 +36,9 @@ source "${BASH_SOURCE%/*}/setup/nodejs_and_npm.sh"
 notify "Installing Ruby and gems"
 source "${BASH_SOURCE%/*}/setup/ruby_and_gems.sh"
 
+notify "Installing other software"
+source "${BASH_SOURCE%/*}/setup/other_software.sh"
+
 notify "Configuring macOS defaults"
 source "${BASH_SOURCE%/*}/setup/macos_defaults_sudo.sh"
 source "${BASH_SOURCE%/*}/setup/macos_defaults_user.sh"

@@ -60,7 +60,6 @@ brew "lazygit"
 brew "leiningen"
 brew "less"
 brew "mackup"
-brew "mas"
 brew "mercurial"
 brew "moreutils"
 brew "mtr"
@@ -185,6 +184,18 @@ brew "pip-completion"
 brew "rake-completion"
 brew "ruby-completion"
 brew "tmuxinator-completion"
+EOF
+
+notify "==> Installing Mac App Store apps"
+brew bundle --file=-<<EOF
+brew "mas" # required for using mas in a brewfile
+EOF
+brew bundle --file=-<<EOF
+mas "xcode", id: 497799835
+mas "Kiwi for Gmail", id: 986304488
+mas "HyperDock", id: 449830122
+mas "Paprika Recipe Manager", id: 1303222628
+mas "Bitwarden", id: 1352778147
 EOF
 
 notify "==> Performing homebrew cleanup"

@@ -25,7 +25,7 @@ else
 fi
 
 notify "Installing homebrew packages"
-source "${BASH_SOURCE%/*}/setup/homebrew_packages.sh"
+source "${BASH_SOURCE%/*}/setup/homebrew_and_app_store_packages.sh"
 
 notify "Installing Python and pip packages"
 source "${BASH_SOURCE%/*}/setup/python_and_pip.sh"
@@ -42,9 +42,6 @@ source "${BASH_SOURCE%/*}/setup/other_software.sh"
 notify "Configuring macOS defaults"
 source "${BASH_SOURCE%/*}/setup/macos_defaults_sudo.sh"
 source "${BASH_SOURCE%/*}/setup/macos_defaults_user.sh"
-
-notify "Installing Mac App Store apps"
-source "${BASH_SOURCE%/*}/setup/mac_app_store.sh"
 
 notify "Configuring dock"
 source "${BASH_SOURCE%/*}/setup/configure_dock.sh"

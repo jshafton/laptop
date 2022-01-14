@@ -17,6 +17,7 @@ install_asdf_plugin() {
     asdf plugin add "$1" "${@:2}"
   fi
 }
+
 notify "==> Installing Terraform plugin"
 install_asdf_plugin terraform https://github.com/asdf-community/asdf-hashicorp.git
 asdf install terraform 1.0.11

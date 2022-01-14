@@ -2,7 +2,9 @@
 
 set -eo pipefail
 
-GLOBAL_NODEJS_VERSION=16.13.1
+# While this is the latest LTS, it has some issues on mac m1 ARM
+# GLOBAL_NODEJS_VERSION=16.13.1
+GLOBAL_NODEJS_VERSION=14.18.2
 
 if [ -f "${HOMEBREW_PREFIX}/opt/asdf/libexec/asdf.sh" ]; then
   . "${HOMEBREW_PREFIX}/opt/asdf/libexec/asdf.sh"
@@ -49,8 +51,6 @@ install_npm_global_package jshint
 install_npm_global_package eslint
 install_npm_global_package coffeelint
 install_npm_global_package jsonlint
-install_npm_global_package neovim
-install_npm_global_package bash-language-server
 
 notify "==> Updating nodejs shims"
 asdf reshim nodejs

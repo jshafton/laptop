@@ -42,14 +42,11 @@ notify "==> Installing global ruby version"
 asdf install ruby "$GLOBAL_RUBY_VERSION"
 asdf global ruby "$GLOBAL_RUBY_VERSION"
 
-notify "==> Configuring bundler"
-bundle config --global jobs "$(nproc)"
-
 notify "==> Installing global ruby gems"
 install_ruby_global_gem bundler
-install_ruby_global_gem tmuxinator
-install_ruby_global_gem tugboat
-install_ruby_global_gem neovim
+
+notify "==> Configuring bundler"
+bundle config --global jobs "$(nproc)"
 
 notify "==> Updating ruby gem shims"
 asdf reshim ruby

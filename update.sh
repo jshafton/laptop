@@ -5,15 +5,19 @@ notify() {
 }
 
 # Ask for the administrator password upfront
-sudo -v
+sudo -v -p "Enter sudo password for configuration"
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-notify "Installing Rosetta 2"
+notify "============================"
+notify "=== Installing Rosetta 2 ==="
+notify "============================"
 softwareupdate --install-rosetta --agree-to-license
 
-echo "Installing xcode command-line tools..."
+notify "==========================================="
+notify "=== Installing xcode command-line tools ==="
+notify "==========================================="
 if ( xcode-select -p &> /dev/null ); then
   echo "xcode command-line tools already installed."
 else
@@ -24,29 +28,36 @@ else
   done
 fi
 
-notify "Installing homebrew packages"
+notify "===================================="
+notify "=== Installing homebrew packages ==="
+notify "===================================="
 source "${BASH_SOURCE%/*}/setup/homebrew_and_app_store_packages.sh"
 
-notify "Installing Python and pip packages"
+notify "=========================================="
+notify "=== Installing Python and pip packages ==="
+notify "=========================================="
 source "${BASH_SOURCE%/*}/setup/python_and_pip.sh"
 
-notify "Installing nodejs and npm packages"
+notify "=========================================="
+notify "=== Installing nodejs and npm packages ==="
+notify "=========================================="
 source "${BASH_SOURCE%/*}/setup/nodejs_and_npm.sh"
 
-notify "Installing Ruby and gems"
+notify "================================ "
+notify "=== Installing Ruby and gems === "
+notify "================================ "
 source "${BASH_SOURCE%/*}/setup/ruby_and_gems.sh"
 
-notify "Installing other software"
-source "${BASH_SOURCE%/*}/setup/other_software.sh"
-
-notify "Configuring macOS defaults"
-source "${BASH_SOURCE%/*}/setup/macos_defaults_sudo.sh"
-source "${BASH_SOURCE%/*}/setup/macos_defaults_user.sh"
-
-notify "Configuring dock"
-source "${BASH_SOURCE%/*}/setup/configure_dock.sh"
-
-notify "Installing software updates"
+notify "==================================="
+notify "=== Installing software updates ==="
+notify "==================================="
 source "${BASH_SOURCE%/*}/setup/software_updates.sh"
+
+if [ "$INCLUDE_DEVOPS" == "1" ]; then
+  notify "========================================"
+  notify "=== Installing other DevOps software ==="
+  notify "========================================"
+  source "${BASH_SOURCE%/*}/setup/other_devops_software.sh"
+fi
 
 notify "==> DONE! <=="

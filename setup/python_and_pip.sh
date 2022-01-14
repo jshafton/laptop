@@ -73,12 +73,6 @@ notify "==> Upgrading pip"
 python2 -m pip install --upgrade pip
 python3 -m pip install --upgrade pip
 
-notify "==> Installing global pip packages..."
-install_python3_pip boto
-install_python3_pip yamllint
-install_python3_pip vim-vint
-install_python3_pip ranger-fm
-
 notify "==> Installing dependencies for pgcli"
 brew list libpq >/dev/null || brew install libpq
 
@@ -92,17 +86,6 @@ PATH="$libpq_path/bin:$PATH" \
   CPPFLAGS="-I$libpq_path/include \
   -I$openssl_path/include" \
   install_python3_pip pgcli
-
-notify "==> Installing python support for Neovim"
-install_python2_pip pynvim
-install_python2_pip neovim
-install_python3_pip pynvim
-install_python3_pip neovim
-
-# TODO: something weird with cryptography package
-# brew install pkg-config libffi openssl
-# env LDFLAGS="-L$(brew --prefix openssl)/lib" CFLAGS="-I$(brew --prefix openssl)/include" pip install cryptography
-# env LDFLAGS="-L$(brew --prefix openssl)/lib" CFLAGS="-I$(brew --prefix openssl)/include" pipenv install cryptography
 
 notify "==> Installing global versions of python packages"
 # maybe plugins:

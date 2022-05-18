@@ -10,28 +10,32 @@ sudo -v -p "Enter sudo password for configuration"
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-notify "============================"
-notify "=== Installing Rosetta 2 ==="
-notify "============================"
-softwareupdate --install-rosetta --agree-to-license
+if [[ "$(uname)" == "Darwin" ]]; then
 
-notify "==========================================="
-notify "=== Installing xcode command-line tools ==="
-notify "==========================================="
-if ( xcode-select -p &> /dev/null ); then
-  echo "xcode command-line tools already installed."
-else
-  xcode-select --install
-  until ( xcode-select -p &> /dev/null ); do
-    echo "Waiting on xcode installation..."
-    sleep 2
-  done
+  notify "============================"
+  notify "=== Installing Rosetta 2 ==="
+  notify "============================"
+  softwareupdate --install-rosetta --agree-to-license
+
+  notify "==========================================="
+  notify "=== Installing xcode command-line tools ==="
+  notify "==========================================="
+  if ( xcode-select -p &> /dev/null ); then
+    echo "xcode command-line tools already installed."
+  else
+    xcode-select --install
+    until ( xcode-select -p &> /dev/null ); do
+      echo "Waiting on xcode installation..."
+      sleep 2
+    done
+  fi
+
+  notify "===================================="
+  notify "=== Installing homebrew packages ==="
+  notify "===================================="
+  source "${BASH_SOURCE%/*}/setup/homebrew_and_app_store_packages.sh"
+
 fi
-
-notify "===================================="
-notify "=== Installing homebrew packages ==="
-notify "===================================="
-source "${BASH_SOURCE%/*}/setup/homebrew_and_app_store_packages.sh"
 
 notify "=========================================="
 notify "=== Installing Python and pip packages ==="
@@ -48,16 +52,22 @@ notify "=== Installing Ruby and gems === "
 notify "================================ "
 source "${BASH_SOURCE%/*}/setup/ruby_and_gems.sh"
 
-notify "==================================="
-notify "=== Installing software updates ==="
-notify "==================================="
-source "${BASH_SOURCE%/*}/setup/software_updates.sh"
+if [[ "$(uname)" == "Darwin" ]]; then
+
+  notify "==================================="
+  notify "=== Installing software updates ==="
+  notify "==================================="
+  source "${BASH_SOURCE%/*}/setup/software_updates.sh"
+
+fi
 
 if [ "$INCLUDE_DEVOPS" == "1" ]; then
+
   notify "========================================"
   notify "=== Installing other DevOps software ==="
   notify "========================================"
   source "${BASH_SOURCE%/*}/setup/other_devops_software.sh"
+
 fi
 
 notify "==> DONE! <=="

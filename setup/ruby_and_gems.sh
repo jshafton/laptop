@@ -6,6 +6,8 @@ GLOBAL_RUBY_VERSION=3.1.0
 
 if [ -f "${HOMEBREW_PREFIX}/opt/asdf/libexec/asdf.sh" ]; then
   . "${HOMEBREW_PREFIX}/opt/asdf/libexec/asdf.sh"
+elif [ -f "${HOME}/.asdf/asdf.sh" ]; then
+  . "${HOME}/.asdf/asdf.sh"
 fi
 
 notify() {
@@ -30,7 +32,7 @@ install_ruby_global_gem() {
   fi
 }
 
-if ! brew list asdf >/dev/null; then
+if ! hash asdf >/dev/null; then
   notify "! ERROR: asdf version manager not installed"
   exit 1
 fi

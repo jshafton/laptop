@@ -8,6 +8,8 @@ GLOBAL_AWSCLI_VERSION=2.4.9
 
 if [ -f "${HOMEBREW_PREFIX}/opt/asdf/libexec/asdf.sh" ]; then
   . "${HOMEBREW_PREFIX}/opt/asdf/libexec/asdf.sh"
+elif [ -f "${HOME}/.asdf/asdf.sh" ]; then
+  . "${HOME}/.asdf/asdf.sh"
 fi
 
 notify() {
@@ -22,7 +24,9 @@ install_asdf_plugin() {
   fi
 }
 
-install_brew_package() {
+install_package() {
+  hash brew >/dev/null || return
+
   notify "Installing package $1"
 
   if brew list "$1" >/dev/null; then
@@ -52,14 +56,34 @@ install_python3_pip() {
   fi
 }
 
-if ! brew list asdf >/dev/null; then
+install_pgcli() {
+  if [[ "$(uname)" == "Darwin" ]]; then
+    notify "==> Installing dependencies for pgcli"
+    brew list libpq >/dev/null || brew install libpq
+
+    libpq_path=$(brew --prefix libpq)
+    openssl_path=$(brew --prefix openssl)
+
+    # Special fun required for libpq
+    PATH="$libpq_path/bin:$PATH" \
+      LDFLAGS="-L$libpq_path/lib \
+      -L$openssl_path/lib" \
+      CPPFLAGS="-I$libpq_path/include \
+      -I$openssl_path/include" \
+      install_python3_pip pgcli
+  else
+    install_python3_pip pgcli
+  fi
+}
+
+if ! hash asdf >/dev/null; then
   notify "! ERROR: asdf version manager not installed"
   exit 1
 fi
 
-notify "==> Installing dependencies for python via homebrew"
-install_brew_package openssl@1.1
-install_brew_package openssl@3
+notify "==> Installing dependencies for python"
+install_package openssl@1.1
+install_package openssl@3
 
 notify "==> Installing Python plugin"
 install_asdf_plugin python
@@ -73,19 +97,7 @@ notify "==> Upgrading pip"
 python2 -m pip install --upgrade pip
 python3 -m pip install --upgrade pip
 
-notify "==> Installing dependencies for pgcli"
-brew list libpq >/dev/null || brew install libpq
-
-libpq_path=$(brew --prefix libpq)
-openssl_path=$(brew --prefix openssl)
-
-# Special fun required for libpq
-PATH="$libpq_path/bin:$PATH" \
-  LDFLAGS="-L$libpq_path/lib \
-  -L$openssl_path/lib" \
-  CPPFLAGS="-I$libpq_path/include \
-  -I$openssl_path/include" \
-  install_python3_pip pgcli
+install_pgcli
 
 notify "==> Installing global versions of python packages"
 # maybe plugins:

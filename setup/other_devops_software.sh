@@ -4,6 +4,8 @@ set -eo pipefail
 
 if [ -f "${HOMEBREW_PREFIX}/opt/asdf/libexec/asdf.sh" ]; then
   . "${HOMEBREW_PREFIX}/opt/asdf/libexec/asdf.sh"
+elif [ -f "${HOME}/.asdf/asdf.sh" ]; then
+  . "${HOME}/.asdf/asdf.sh"
 fi
 
 notify() {
